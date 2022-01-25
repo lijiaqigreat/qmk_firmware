@@ -1,17 +1,17 @@
 #include QMK_KEYBOARD_H
 
 enum layer_number {
-  _LILY_QWERTY = 0,
-  _LILY_COLEMAK_DH,
-  _LILY_RAISE,
   _34_COLEMAK_DH,
-  // _34_QWERTY,
+  _34_QWERTY,
   _34_LEFT_NUM,
   _34_LEFT_MEDIA, // one hand
   _34_LEFT_FUN,
   _34_RIGHT_NAV, // one hand
   _34_RIGHT_MOUSE,
   _34_RIGHT_UNCOMMON,
+  _LILY_QWERTY = 0,
+  _LILY_COLEMAK_DH,
+  _LILY_RAISE,
 };
 
 #define _34_1 _34_COLEMAK_DH
@@ -79,9 +79,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_34_COLEMAK_DH] = LAYOUT(
 		KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-		KC_NO,RALT_T(KC_Q),LCMD_T(KC_W),       KC_F ,    KC_P ,KC_B,            KC_J,    KC_L ,       KC_U    ,RCTL_T(KC_Y  ),RALT_T(KC_SCLN), KC_NO,
-		KC_NO,LALT_T(KC_A),LCTL_T(KC_R),LSFT_T(KC_S),_L1(KC_T),KC_G,            KC_M,_R1(KC_N),RSFT_T(KC_E   ),RGUI_T(KC_I  ),LALT_T(KC_O   ), KC_NO,
+		KC_NO,RALT_T(KC_Q),LCTL_T(KC_W),       KC_F ,    KC_P ,KC_B,            KC_J,    KC_L ,       KC_U    ,RCTL_T(KC_Y  ),RALT_T(KC_SCLN), KC_NO,
+		KC_NO,LALT_T(KC_A),LCMD_T(KC_R),LSFT_T(KC_S),_L1(KC_T),KC_G,            KC_M,_R1(KC_N),RSFT_T(KC_E   ),RGUI_T(KC_I  ),LALT_T(KC_O   ), KC_NO,
 		KC_NO,       KC_Z ,       KC_X ,       KC_C ,_L2(KC_D),KC_V,KC_NO,KC_NO,KC_K,_R3(KC_H),       KC_COMM ,       KC_DOT ,       KC_SLSH , KC_NO,
+		KC_NO, KC_NO, KC_ESC, _L2(KC_SPC),              _R2(KC_ENT), KC_BSPC, KC_NO, DF(_LILY_QWERTY)
+),
+[_34_QWERTY] = LAYOUT(
+		KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+		KC_NO,RALT_T(KC_Q),LCTL_T(KC_W),       KC_E ,    KC_R ,KC_T,            KC_Y,    KC_U ,       KC_I    ,RCTL_T(KC_O  ),RALT_T(KC_P.  ), KC_NO,
+		KC_NO,LALT_T(KC_A),LCMD_T(KC_S),LSFT_T(KC_D),_L1(KC_F),KC_G,            KC_H,_R1(KC_J),RSFT_T(KC_K   ),RGUI_T(KC_L  ),LALT_T(KC_SCLN), KC_NO,
+		KC_NO,       KC_Z ,       KC_X ,       KC_C ,_L2(KC_V),KC_B,KC_NO,KC_NO,KC_N,_R3(KC_M),       KC_COMM ,       KC_DOT ,       KC_SLSH , KC_NO,
 		KC_NO, KC_NO, KC_ESC, _L2(KC_SPC),              _R2(KC_ENT), KC_BSPC, KC_NO, DF(_LILY_QWERTY)
 ),
 /* TEMPLATE
@@ -184,9 +191,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_34_RIGHT_UNCOMMON] = LAYOUT(
 		KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-		KC_NO, KC_RALT, KC_LCTL, KC_NO,   KC_NO, KC_NO,               KC_NO, CG_SWAP, CG_NORM, RESET, DEBUG, KC_NO,
-		KC_NO, KC_LALT, KC_LGUI, KC_LSFT, KC_NO, KC_NO,               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-		KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+		KC_NO, KC_RALT, KC_LCTL, KC_NO,   KC_NO, KC_NO,               KC_NO, CG_SWAP,   CG_NORM,   RESET, DEBUG, KC_NO,
+		KC_NO, KC_LALT, KC_LGUI, KC_LSFT, KC_NO, KC_NO,               KC_NO, DF(_34_1), DF(_34_2), KC_NO, KC_NO, KC_NO,
+		KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO,     KC_NO, KC_NO, KC_NO,
 		KC_NO, KC_NO, KC_ESC, KC_SPC,                KC_ENT, KC_BSPC, KC_NO, KC_NO
 )
 };
