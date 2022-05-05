@@ -30,7 +30,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 200
 #define IGNORE_MOD_TAP_INTERRUPT
-#define EXTRAKEY_ENABLE
+// #define EXTRAKEY_ENABLE
+
+#define MK_3_SPEED
+#define MK_MOMENTARY_ACCEL
+/* #define MK_C_OFFSET_UNMOD   16 */
+/* #define MK_C_INTERVAL_UNMOD 16 */
+/* #define MK_C_OFFSET_0       1 */
+/* #define MK_C_INTERVAL_0     32 */
+/* #define MK_C_OFFSET_1       4 */
+/* #define MK_C_INTERVAL_1     16 */
+/* #define MK_C_OFFSET_2       32 */
+/* #define MK_C_INTERVAL_2     16 */
+#define MK_C_OFFSET_UNMOD   4
+#define MK_C_INTERVAL_UNMOD 16
+// #define MOUSE_ENABLE
 
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
